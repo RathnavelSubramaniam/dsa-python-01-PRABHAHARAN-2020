@@ -24,7 +24,6 @@ class Basket:
 # Creating Orange objects
 o1 = Orange("Nagpur Kamala Orange", "Orange", 165)
 o2 = Orange("Mosambi Orange", "Light Greenish Orange", 180)
-
 # Creating Basket object
 b1 = Basket(0)
 # Interaction between objects
