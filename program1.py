@@ -27,7 +27,6 @@ o2 = Orange("Mosambi Orange", "Light Greenish Orange", 180)
 
 # Creating Basket object
 b1 = Basket(0)
-
 # Interaction between objects
 b1.add_orange(o1)
 b1.add_orange(o2)
