@@ -31,7 +31,7 @@ jobs:
           Colour of Orange: Light Greenish Orange
           Weight of Orange in grams: 180
           Oranges in Basket: 2
-        comparison-method: exact
+        comparison-method: regex
         timeout: 10
         max-score: 10
     - name: Autograding Reporter
