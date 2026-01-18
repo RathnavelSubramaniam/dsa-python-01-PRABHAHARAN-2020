@@ -1,0 +1,42 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: test1
+      id: test1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: test1
+        setup-command: ''
+        command: program1.py
+        input: ''
+        expected-output: |-
+          Orange added to the basket.
+          Variety of Orange: Nagpur Kamala Orange
+          Colour of Orange: Orange
+          Weight of Orange in grams: 165
+          Orange added to the basket.
+          Variety of Orange: Mosambi Orange
+          Colour of Orange: Light Greenish Orange
+          Weight of Orange in grams: 180
+          Oranges in Basket: 2
+        comparison-method: exact
+        timeout: 10
+        max-score: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TEST1_RESULTS: "${{steps.test1.outputs.result}}"
+      with:
+        runners: test1
