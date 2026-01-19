@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: test1
         setup-command: ''
-        command: program1.py
+        command: python program1.py
         input: ''
         expected-output: |-
           Orange added to the basket.
